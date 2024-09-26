@@ -42,4 +42,17 @@ db.Users.insertMany([
             "CAR"
         ]
     }
+    {
+        "Username": "carlos",
+        "Password": "carlos",
+        "FirstName": "Carlos",
+        "LastName": "Valdivia Espino",
+        "Avatar": "",
+        "AvailableProducts": [
+            "TRI",
+            "HSI",
+            "FAI",
+            "CAR"
+        ]
+    }
 ])

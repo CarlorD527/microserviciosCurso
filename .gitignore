@@ -17,6 +17,28 @@ bower_components/
 # IDEs and editors
 .idea/
 
+# Ignorar archivos y directorios de Elasticsearch
+app/Infrastructure/elk/Microservices.Demo.Elasticsearch/es-data/_state/
+app/Infrastructure/elk/Microservices.Demo.Elasticsearch/es-data/indices/
+
+# Ignorar archivos específicos de Elasticsearch
+app/Infrastructure/elk/Microservices.Demo.Elasticsearch/es-data/_state/*.cfe
+app/Infrastructure/elk/Microservices.Demo.Elasticsearch/es-data/_state/*.cfs
+app/Infrastructure/elk/Microservices.Demo.Elasticsearch/es-data/_state/*.si
+app/Infrastructure/elk/Microservices.Demo.Elasticsearch/es-data/indices/*/_state/*
+
+# Ignorar archivos y directorios de Elasticsearch
+app/Infrastructure/elk/Microservices.Demo.Elasticsearch/es-data/_state/
+app/Infrastructure/elk/Microservices.Demo.Elasticsearch/es-data/indices/
+app/Infrastructure/elk/Microservices.Demo.Elasticsearch/es-data/snapshot_cache/
+
+# Ignorar archivos y directorios de Prometheus
+app/Infrastructure/obs/Microservices.Demo.Prometheus/data/01J8PA5RJ4VB317FAD2D5RGF85/
+app/Infrastructure/obs/Microservices.Demo.Prometheus/data/01J8PA5VKWJPZ9TR4KFHQ5E5YQ/
+app/Infrastructure/obs/Microservices.Demo.Prometheus/data/chunks_head/
+app/Infrastructure/obs/Microservices.Demo.Prometheus/data/wal/
+
+
 # misc
 .sass-cache/
 connect.lock/

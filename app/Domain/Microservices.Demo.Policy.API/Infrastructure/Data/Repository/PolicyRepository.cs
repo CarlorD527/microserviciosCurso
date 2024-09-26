@@ -20,11 +20,19 @@
             _policyDbContext.Policies.Add(policy);
         }
 
+        public async Task<IEnumerable<Policy>> GetAllPoliciesAsync()
+        {
+           
+            return await _policyDbContext.Policies.ToListAsync();
+
+        }
+
         public async Task<Policy> WithNumber(string number)
         {
             return await _policyDbContext.Policies.Where(p => p.Number == number).FirstOrDefaultAsync();
             
         }
+
     }
 }
     

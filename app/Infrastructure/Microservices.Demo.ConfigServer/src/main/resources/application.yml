@@ -7,10 +7,10 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/CarlorD527/microserviciosCurso.git
+          uri: https://github.com/CarlorD527/Microservices-Config-Repository.git
           search-paths:
             - '{application}'
-          defaultLabel: master
+          defaultLabel: main
 eureka:
   instance:
     appName: Microservices.Demo.ConfigServer

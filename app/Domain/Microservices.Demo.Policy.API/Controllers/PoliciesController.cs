@@ -40,5 +40,14 @@ namespace Microservices.Demo.Policy.API.Controllers
         {
             return new JsonResult(await _policyApplicationService.TerminatePolicy(command));
         }
+
+        // GET: api/policies
+        [HttpGet]
+        public async Task<ActionResult> GetAllPolicies()
+        {
+            var policies = await _policyApplicationService.GetAllPoliciesAsync();
+            return new JsonResult(policies);
+        }
+
     }
 }

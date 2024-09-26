@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microservices.Demo.Policy.API.CQRS.Commands.Policy.CreatePolicy;
 using Microservices.Demo.Policy.API.CQRS.Commands.Policy.TerminatePolicy;
+using Microservices.Demo.Policy.API.CQRS.Queries.Policy.GetAllPolicies;
 using Microservices.Demo.Policy.API.CQRS.Queries.Policy.GetPolicyDetails;
 using System;
 using System.Collections.Generic;
@@ -29,6 +30,13 @@ namespace Microservices.Demo.Policy.API.Application
         public async Task<TerminatePolicyResult> TerminatePolicy(TerminatePolicyCommand command)
         {
             var result = await _mediator.Send(command);
+            return result;
+        }
+        // Nuevo método para obtener todas las pólizas
+        public async Task<GetAllPoliciesQueryResult> GetAllPoliciesAsync()
+        {
+            var result = await _mediator.Send(new GetAllPoliciesQuery());
+
             return result;
         }
     }
