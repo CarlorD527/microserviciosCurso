@@ -5,8 +5,8 @@ using Microservices.Demo.Policy.API.CQRS.Queries.Policy.GetPolicyDetails;
 
 namespace Microservices.Demo.Policy.API.CQRS.Queries.Policy.GetAllPolicies
 {
-    public class GetAllPoliciesQuery  : IRequest<GetAllPoliciesQueryResult>
+    public class GetAllPoliciesQuery : IRequest<IEnumerable<PolicyReportDto>>
     {
-        // No se necesitan parametros.
+        // Puedes agregar propiedades necesarias para la consulta aquí.
     }
 }

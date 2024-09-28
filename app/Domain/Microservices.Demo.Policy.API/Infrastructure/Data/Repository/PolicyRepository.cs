@@ -20,7 +20,7 @@
             _policyDbContext.Policies.Add(policy);
         }
 
-        public async Task<IEnumerable<Policy>> GetAllPoliciesAsync()
+        public async Task<List<Policy>> GetAllPoliciesAsync()
         {
            
             return await _policyDbContext.Policies.ToListAsync();

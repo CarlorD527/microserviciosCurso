@@ -2,11 +2,6 @@
 using Microservices.Demo.Product.API.CQRS.Queries.Infrastructure.Adapters;
 using Microservices.Demo.Product.API.CQRS.Queries.Infrastructure.Dtos.Product;
 using Microservices.Demo.Product.API.Infrastructure.Data.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace Microservices.Demo.Product.API.CQRS.Queries.FindAllProducts
 {

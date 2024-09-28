@@ -1,43 +1,33 @@
-﻿
+﻿using MediatR;
+using Microservices.Demo.Policy.API.CQRS.Queries.Infrastructure.Dtos.Policy;
+using Microservices.Demo.Policy.API.Infrastructure.Data.Repository;
+
 namespace Microservices.Demo.Policy.API.CQRS.Queries.Policy.GetAllPolicies
 {
-    using MediatR;
-    using Microservices.Demo.Policy.API.CQRS.Queries.Infrastructure.Dtos.Policy;
-    using Microservices.Demo.Policy.API.Infrastructure.Data.Repository;
-    using Microservices.Demo.Policy.API.Infrastructure.Data.Entities;
-    using Microservices.Demo.Policy.API.CQRS.Queries.Policy.GetPolicyDetails;
-    using System.Threading.Tasks;
-    using System.Threading;
 
-    public class GetAllPoliciesHandler : IRequestHandler<GetAllPoliciesQuery, GetAllPoliciesQueryResult>
+    public class GetAllPoliciesHandler : IRequestHandler<GetAllPoliciesQuery, IEnumerable<PolicyReportDto>>
     {
         private readonly IPolicyRepository _policyRepository;
 
         public GetAllPoliciesHandler(IPolicyRepository policyRepository)
         {
-            _policyRepository = policyRepository;
+            _policyRepository = policyRepository ?? throw new ArgumentNullException(nameof(_policyRepository)); ;
         }
 
-        public async Task<GetAllPoliciesQueryResult> Handle(GetAllPoliciesQuery request, CancellationToken cancellationToken)
+        public async Task<IEnumerable<PolicyReportDto>> Handle(GetAllPoliciesQuery request, CancellationToken cancellationToken)
         {
+
             // Obtener todas las pólizas desde el repositorio
             var policies = await _policyRepository.GetAllPoliciesAsync();
 
-            // Mapear las pólizas a PolicyDetailsDto
-            var policyDetailsDtos = policies.Select(policy => new PolicyDetailsDto
+            return policies.Select(p => new PolicyReportDto
             {
-                Number = policy.Number,
-                PolicyHolder = policy.AgentLogin,
-                ProductCode = policy.ProductCode,
+                Number = p.Number,
+                ProductCode = p.ProductCode,
+                PolicyHolder = p.AgentLogin,
+
             }).ToList();
-
-            // Crear el resultado a devolver
-            return new GetAllPoliciesQueryResult
-            {
-                Policies = policyDetailsDtos
-            };
         }
-
     }
     
 }

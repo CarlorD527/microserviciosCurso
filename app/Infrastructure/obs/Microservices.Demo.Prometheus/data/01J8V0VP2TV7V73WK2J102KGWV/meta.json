@@ -1,0 +1,17 @@
+{
+	"ulid": "01J8V0VP2TV7V73WK2J102KGWV",
+	"minTime": 1727325724913,
+	"maxTime": 1727330400000,
+	"stats": {
+		"numSamples": 1995644,
+		"numSeries": 11884,
+		"numChunks": 23089
+	},
+	"compaction": {
+		"level": 1,
+		"sources": [
+			"01J8V0VP2TV7V73WK2J102KGWV"
+		]
+	},
+	"version": 1
+}
